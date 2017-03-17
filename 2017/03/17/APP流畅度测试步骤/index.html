@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="test," />
+  <meta name="keywords" content="work," />
 
 
 
@@ -84,34 +84,37 @@
 
 
 
-<meta name="description" content="开一个bug；
-查找一些额外的资料如设计文档和历史，确定这是一个问题，然后给出详细的bug重现步骤；
-对重现步骤做一些精炼，确定能够重现bug的最少步骤；可能的话，将重现步骤做自动化；
-尝试通过研究代码确认问题所在；
-尝试给出一个fix；
-对错误的原因进行分析，提出一些标准化的方法来检测出类似的问题，比如stress，fuzzing等等；
-能够对标准化的测试流程定义对应的数据分析方法，可以保证开">
+<meta name="description" content="1. 高动画流畅性需求页面（当主观上认为动画卡顿时）
+首先开启自带的GPU图形呈现器（每帧是否超过16ms的线。即是否达到60帧，低于30帧需要提交报告）
+
+Android studio monitor 查看各项指标（备选）
+
+adb shell dumpsys gfxinfo PackageName（导出最近120帧的各线程的gpu渲染信息）
+
+Trepn Profiler 查看各项指标（查看最">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Bug解决层次-摘抄">
-<meta property="og:url" content="https://zhong914.github.io/2017/01/07/Bug解决层次/index.html">
+<meta property="og:title" content="APP流畅度测试步骤">
+<meta property="og:url" content="https://zhong914.github.io/2017/03/17/APP流畅度测试步骤/index.html">
 <meta property="og:site_name" content="Super7's Blog">
-<meta property="og:description" content="开一个bug；
-查找一些额外的资料如设计文档和历史，确定这是一个问题，然后给出详细的bug重现步骤；
-对重现步骤做一些精炼，确定能够重现bug的最少步骤；可能的话，将重现步骤做自动化；
-尝试通过研究代码确认问题所在；
-尝试给出一个fix；
-对错误的原因进行分析，提出一些标准化的方法来检测出类似的问题，比如stress，fuzzing等等；
-能够对标准化的测试流程定义对应的数据分析方法，可以保证开">
-<meta property="og:updated_time" content="2017-03-17T15:08:53.745Z">
+<meta property="og:description" content="1. 高动画流畅性需求页面（当主观上认为动画卡顿时）
+首先开启自带的GPU图形呈现器（每帧是否超过16ms的线。即是否达到60帧，低于30帧需要提交报告）
+
+Android studio monitor 查看各项指标（备选）
+
+adb shell dumpsys gfxinfo PackageName（导出最近120帧的各线程的gpu渲染信息）
+
+Trepn Profiler 查看各项指标（查看最">
+<meta property="og:updated_time" content="2017-03-17T15:33:49.567Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Bug解决层次-摘抄">
-<meta name="twitter:description" content="开一个bug；
-查找一些额外的资料如设计文档和历史，确定这是一个问题，然后给出详细的bug重现步骤；
-对重现步骤做一些精炼，确定能够重现bug的最少步骤；可能的话，将重现步骤做自动化；
-尝试通过研究代码确认问题所在；
-尝试给出一个fix；
-对错误的原因进行分析，提出一些标准化的方法来检测出类似的问题，比如stress，fuzzing等等；
-能够对标准化的测试流程定义对应的数据分析方法，可以保证开">
+<meta name="twitter:title" content="APP流畅度测试步骤">
+<meta name="twitter:description" content="1. 高动画流畅性需求页面（当主观上认为动画卡顿时）
+首先开启自带的GPU图形呈现器（每帧是否超过16ms的线。即是否达到60帧，低于30帧需要提交报告）
+
+Android studio monitor 查看各项指标（备选）
+
+adb shell dumpsys gfxinfo PackageName（导出最近120帧的各线程的gpu渲染信息）
+
+Trepn Profiler 查看各项指标（查看最">
 
 
 
@@ -139,13 +142,13 @@
 
 
 
-  <link rel="canonical" href="https://zhong914.github.io/2017/01/07/Bug解决层次/"/>
+  <link rel="canonical" href="https://zhong914.github.io/2017/03/17/APP流畅度测试步骤/"/>
 
 
 
 
 
-  <title> Bug解决层次-摘抄 | Super7's Blog </title>
+  <title> APP流畅度测试步骤 | Super7's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -268,7 +271,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="https://zhong914.github.io/2017/01/07/Bug解决层次/">
+  <link itemprop="mainEntityOfPage" href="https://zhong914.github.io/2017/03/17/APP流畅度测试步骤/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Super7">
@@ -292,7 +295,7 @@
             
             
               
-                Bug解决层次-摘抄
+                APP流畅度测试步骤
               
             
           </h1>
@@ -307,8 +310,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-07T17:32:03+08:00">
-                2017-01-07
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-17T23:31:39+08:00">
+                2017-03-17
               </time>
             
 
@@ -343,16 +346,20 @@
       
 
       
-        <ol>
-<li>开一个bug；</li>
-<li>查找一些额外的资料如设计文档和历史，确定这是一个问题，然后给出详细的bug重现步骤；</li>
-<li>对重现步骤做一些精炼，确定能够重现bug的最少步骤；可能的话，将重现步骤做自动化；</li>
-<li>尝试通过研究代码确认问题所在；</li>
-<li>尝试给出一个fix；</li>
-<li>对错误的原因进行分析，提出一些标准化的方法来检测出类似的问题，比如stress，fuzzing等等；</li>
-<li>能够对标准化的测试流程定义对应的数据分析方法，可以保证开发和项目主管都能从中得到需要的信息来掌控质量状况。</li>
-</ol>
-<h3 id="感谢陈甫鸼-https-www-zhihu-com-question-20269633"><a href="#感谢陈甫鸼-https-www-zhihu-com-question-20269633" class="headerlink" title="感谢陈甫鸼@https://www.zhihu.com/question/20269633"></a>感谢陈甫鸼@<a href="https://www.zhihu.com/question/20269633" target="_blank" rel="external">https://www.zhihu.com/question/20269633</a></h3>
+        <h4 id="1-高动画流畅性需求页面（当主观上认为动画卡顿时）"><a href="#1-高动画流畅性需求页面（当主观上认为动画卡顿时）" class="headerlink" title="1. 高动画流畅性需求页面（当主观上认为动画卡顿时）"></a>1. 高动画流畅性需求页面（当主观上认为动画卡顿时）</h4><ul>
+<li><p>首先开启自带的GPU图形呈现器（每帧是否超过16ms的线。即是否达到60帧，低于30帧需要提交报告）</p>
+</li>
+<li><p>Android studio monitor 查看各项指标（备选）</p>
+</li>
+<li><p>adb shell dumpsys gfxinfo PackageName（导出最近120帧的各线程的gpu渲染信息）</p>
+</li>
+<li><p>Trepn Profiler 查看各项指标（查看最近所有的信息，最全，并导出excel）</p>
+</li>
+</ul>
+<h4 id="2-普通动画"><a href="#2-普通动画" class="headerlink" title="2. 普通动画"></a>2. 普通动画</h4><ul>
+<li>开启自带的GPU图形呈现器（每帧是否超过16ms的线。即是否达到60帧，低于15帧需要提交报告）</li>
+</ul>
+<h4 id="主流机型：sm-j5，其CPU为骁龙410-MSM8916-4-a53-1-2GHz，gpu为Adreno-306-400MHz-24-3gflops-，-gpu负载以90-主频400MHz-为界限"><a href="#主流机型：sm-j5，其CPU为骁龙410-MSM8916-4-a53-1-2GHz，gpu为Adreno-306-400MHz-24-3gflops-，-gpu负载以90-主频400MHz-为界限" class="headerlink" title="主流机型：sm j5，其CPU为骁龙410 MSM8916 4*a53 1.2GHz，gpu为Adreno 306 400MHz 24.3gflops ，==gpu负载以90% 主频400MHz 为界限=="></a>主流机型：sm j5，其CPU为骁龙410 MSM8916 4*a53 1.2GHz，gpu为Adreno 306 400MHz 24.3gflops ，==gpu负载以90% 主频400MHz 为界限==</h4>
       
     </div>
 
@@ -375,7 +382,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/test/" rel="tag"># test</a>
+            <a href="/tags/work/" rel="tag"># work</a>
           
         </div>
       
@@ -384,8 +391,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/09/14/Markdown Guide/" rel="next" title="Markdown Guide">
-                <i class="fa fa-chevron-left"></i> Markdown Guide
+              <a href="/2017/03/17/Docker for windows/" rel="next" title="Docker for windows">
+                <i class="fa fa-chevron-left"></i> Docker for windows
               </a>
             
           </div>
@@ -393,10 +400,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/02/04/java win10 环境变量的配置/" rel="prev" title="win10的一些环境变量的配置">
-                win10的一些环境变量的配置 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -512,7 +515,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#感谢陈甫鸼-https-www-zhihu-com-question-20269633"><span class="nav-number">1.</span> <span class="nav-text">感谢陈甫鸼@https://www.zhihu.com/question/20269633</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-高动画流畅性需求页面（当主观上认为动画卡顿时）"><span class="nav-number">1.</span> <span class="nav-text">1. 高动画流畅性需求页面（当主观上认为动画卡顿时）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-普通动画"><span class="nav-number">2.</span> <span class="nav-text">2. 普通动画</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#主流机型：sm-j5，其CPU为骁龙410-MSM8916-4-a53-1-2GHz，gpu为Adreno-306-400MHz-24-3gflops-，-gpu负载以90-主频400MHz-为界限"><span class="nav-number">3.</span> <span class="nav-text">主流机型：sm j5，其CPU为骁龙410 MSM8916 4*a53 1.2GHz，gpu为Adreno 306 400MHz 24.3gflops ，==gpu负载以90% 主频400MHz 为界限==</span></a></li></ol></div>
             
 
           </div>
