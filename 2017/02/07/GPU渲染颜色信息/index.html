@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="test," />
+  <meta name="keywords" content="android性能," />
 
 
 
@@ -84,34 +84,22 @@
 
 
 
-<meta name="description" content="开一个bug；
-查找一些额外的资料如设计文档和历史，确定这是一个问题，然后给出详细的bug重现步骤；
-对重现步骤做一些精炼，确定能够重现bug的最少步骤；可能的话，将重现步骤做自动化；
-尝试通过研究代码确认问题所在；
-尝试给出一个fix；
-对错误的原因进行分析，提出一些标准化的方法来检测出类似的问题，比如stress，fuzzing等等；
-能够对标准化的测试流程定义对应的数据分析方法，可以保证开">
+<meta name="description" content="GPU渲染颜色信息4.x：蓝色Draw | 代表绘制时间，即创建和更新display lists的时间红色Process | 代表执行时间，即系统进行2D渲染Display List的时间橙色Execute | 代表处理时间，即CPU等待GPU完成渲染处理的时间
+5.x：新增紫色 | 代表渲染线程写入资源所需时间
+6.x：变成9种颜色，将渲染过程中的几大步骤进一步细分，可以通过Android St">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Bug解决层次-摘抄">
-<meta property="og:url" content="https://zhong914.github.io/2017/01/07/Bug解决层次/index.html">
+<meta property="og:title" content="GPU渲染颜色信息">
+<meta property="og:url" content="https://zhong914.github.io/2017/02/07/GPU渲染颜色信息/index.html">
 <meta property="og:site_name" content="Super7's Blog">
-<meta property="og:description" content="开一个bug；
-查找一些额外的资料如设计文档和历史，确定这是一个问题，然后给出详细的bug重现步骤；
-对重现步骤做一些精炼，确定能够重现bug的最少步骤；可能的话，将重现步骤做自动化；
-尝试通过研究代码确认问题所在；
-尝试给出一个fix；
-对错误的原因进行分析，提出一些标准化的方法来检测出类似的问题，比如stress，fuzzing等等；
-能够对标准化的测试流程定义对应的数据分析方法，可以保证开">
-<meta property="og:updated_time" content="2017-03-17T15:08:53.745Z">
+<meta property="og:description" content="GPU渲染颜色信息4.x：蓝色Draw | 代表绘制时间，即创建和更新display lists的时间红色Process | 代表执行时间，即系统进行2D渲染Display List的时间橙色Execute | 代表处理时间，即CPU等待GPU完成渲染处理的时间
+5.x：新增紫色 | 代表渲染线程写入资源所需时间
+6.x：变成9种颜色，将渲染过程中的几大步骤进一步细分，可以通过Android St">
+<meta property="og:updated_time" content="2017-03-17T15:35:04.612Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Bug解决层次-摘抄">
-<meta name="twitter:description" content="开一个bug；
-查找一些额外的资料如设计文档和历史，确定这是一个问题，然后给出详细的bug重现步骤；
-对重现步骤做一些精炼，确定能够重现bug的最少步骤；可能的话，将重现步骤做自动化；
-尝试通过研究代码确认问题所在；
-尝试给出一个fix；
-对错误的原因进行分析，提出一些标准化的方法来检测出类似的问题，比如stress，fuzzing等等；
-能够对标准化的测试流程定义对应的数据分析方法，可以保证开">
+<meta name="twitter:title" content="GPU渲染颜色信息">
+<meta name="twitter:description" content="GPU渲染颜色信息4.x：蓝色Draw | 代表绘制时间，即创建和更新display lists的时间红色Process | 代表执行时间，即系统进行2D渲染Display List的时间橙色Execute | 代表处理时间，即CPU等待GPU完成渲染处理的时间
+5.x：新增紫色 | 代表渲染线程写入资源所需时间
+6.x：变成9种颜色，将渲染过程中的几大步骤进一步细分，可以通过Android St">
 
 
 
@@ -139,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="https://zhong914.github.io/2017/01/07/Bug解决层次/"/>
+  <link rel="canonical" href="https://zhong914.github.io/2017/02/07/GPU渲染颜色信息/"/>
 
 
 
 
 
-  <title> Bug解决层次-摘抄 | Super7's Blog </title>
+  <title> GPU渲染颜色信息 | Super7's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -268,7 +256,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="https://zhong914.github.io/2017/01/07/Bug解决层次/">
+  <link itemprop="mainEntityOfPage" href="https://zhong914.github.io/2017/02/07/GPU渲染颜色信息/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Super7">
@@ -292,7 +280,7 @@
             
             
               
-                Bug解决层次-摘抄
+                GPU渲染颜色信息
               
             
           </h1>
@@ -307,8 +295,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-07T17:32:03+08:00">
-                2017-01-07
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-07T17:26:52+08:00">
+                2017-02-07
               </time>
             
 
@@ -343,16 +331,20 @@
       
 
       
-        <ol>
-<li>开一个bug；</li>
-<li>查找一些额外的资料如设计文档和历史，确定这是一个问题，然后给出详细的bug重现步骤；</li>
-<li>对重现步骤做一些精炼，确定能够重现bug的最少步骤；可能的话，将重现步骤做自动化；</li>
-<li>尝试通过研究代码确认问题所在；</li>
-<li>尝试给出一个fix；</li>
-<li>对错误的原因进行分析，提出一些标准化的方法来检测出类似的问题，比如stress，fuzzing等等；</li>
-<li>能够对标准化的测试流程定义对应的数据分析方法，可以保证开发和项目主管都能从中得到需要的信息来掌控质量状况。</li>
-</ol>
-<h3 id="感谢陈甫鸼-https-www-zhihu-com-question-20269633"><a href="#感谢陈甫鸼-https-www-zhihu-com-question-20269633" class="headerlink" title="感谢陈甫鸼@https://www.zhihu.com/question/20269633"></a>感谢陈甫鸼@<a href="https://www.zhihu.com/question/20269633" target="_blank" rel="external">https://www.zhihu.com/question/20269633</a></h3>
+        <h1 id="GPU渲染颜色信息"><a href="#GPU渲染颜色信息" class="headerlink" title="GPU渲染颜色信息"></a>GPU渲染颜色信息</h1><h2 id="4-x："><a href="#4-x：" class="headerlink" title="4.x："></a>4.x：</h2><p>蓝色Draw | 代表绘制时间，即创建和更新display lists的时间<br>红色Process | 代表执行时间，即系统进行2D渲染Display List的时间<br>橙色Execute | 代表处理时间，即CPU等待GPU完成渲染处理的时间</p>
+<h2 id="5-x："><a href="#5-x：" class="headerlink" title="5.x："></a>5.x：</h2><p>新增紫色 | 代表渲染线程写入资源所需时间</p>
+<h2 id="6-x："><a href="#6-x：" class="headerlink" title="6.x："></a>6.x：</h2><p>变成9种颜色，将渲染过程中的几大步骤进一步细分，可以通过Android Studio上的GPU Monitor可以看到各颜色含义更新如下（关于GPU Monitor下一小节会具体介绍）：</p>
+<p>Swap Buffers | 对应原先Process（橙色），表示处理任务的时间，也可以说是CPU等待GPU完成任务的时间，线条越高，表示GPU做的事情越多；</p>
+<p>Command Issue | 对应原先Execute（红色），表示执行任务的时间，这部分主要是Android进行2D渲染显示列表的时间，为了将内容绘制到屏幕上，Android需要使用Open GL ES的API接口来绘制显示列表，红色线条越高表示需要绘制的视图更多；</p>
+<p>Sync &amp; Upload | 表示的是准备当前界面上有待绘制的图片所耗费的时间，为了减少该段区域的执行时间，我们可以减少屏幕上的图片数量或者是缩小图片的大小；</p>
+<p>Draw | 对应原先Update（蓝色），表示测量和绘制视图列表所需要的时间，蓝色线条越高表示每一帧需要更新很多视图，或者View的onDraw方法中做了耗时操作；</p>
+<p>Measure/Layout | 表示布局的onMeasure与onLayout所花费的时间，一旦时间过长，就需要仔细检查自己的布局是不是存在严重的性能问题；</p>
+<p>Animation | 表示计算执行动画所需要花费的时间，包含的动画有ObjectAnimator，ViewPropertyAnimator，Transition等等。一旦这里的执行时间过长，就需要检查是不是使用了非官方的动画工具或者是检查动画执行的过程中是不是触发了读写操作等等；</p>
+<p>Input Handling | 表示系统处理输入事件所耗费的时间，粗略等于对事件处理方法所执行的时间。一旦执行时间过长，意味着在处理用户的输入事件的地方执行了复杂的操作；</p>
+<p>Misc Time/Vsync Delay | 表示在主线程执行了太多的任务，导致UI渲染跟不上vSync的信号而出现掉帧的情况；出现该线条的时候，可以在Log中看到这样的日志： I/Choreographer(*): Skipped XXX frames! The application may be doing too much work on its main thread</p>
+<p>关于这一部分的具体原理及详细解释可以参考Android性能优化典范：</p>
+<p><a href="http://hukai.me/android-performance-patterns/" target="_blank" rel="external">http://hukai.me/android-performance-patterns/</a><br><a href="http://hukai.me/android-performance-patterns-season-5/" target="_blank" rel="external">http://hukai.me/android-performance-patterns-season-5/</a><br>安卓绘图原理<br><a href="http://blog.csdn.net/xiaosongluo/article/details/51212296" target="_blank" rel="external">http://blog.csdn.net/xiaosongluo/article/details/51212296</a></p>
+
       
     </div>
 
@@ -375,7 +367,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/test/" rel="tag"># test</a>
+            <a href="/tags/android性能/" rel="tag"># android性能</a>
           
         </div>
       
@@ -384,8 +376,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/09/14/Markdown Guide/" rel="next" title="Markdown Guide">
-                <i class="fa fa-chevron-left"></i> Markdown Guide
+              <a href="/2017/02/04/java win10 环境变量的配置/" rel="next" title="win10的一些环境变量的配置">
+                <i class="fa fa-chevron-left"></i> win10的一些环境变量的配置
               </a>
             
           </div>
@@ -394,8 +386,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/02/04/java win10 环境变量的配置/" rel="prev" title="win10的一些环境变量的配置">
-                win10的一些环境变量的配置 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/03/17/macaca自动化探索/" rel="prev" title="macaca自动化探索">
+                macaca自动化探索 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -512,7 +504,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#感谢陈甫鸼-https-www-zhihu-com-question-20269633"><span class="nav-number">1.</span> <span class="nav-text">感谢陈甫鸼@https://www.zhihu.com/question/20269633</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#GPU渲染颜色信息"><span class="nav-number">1.</span> <span class="nav-text">GPU渲染颜色信息</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-x："><span class="nav-number">1.1.</span> <span class="nav-text">4.x：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-x："><span class="nav-number">1.2.</span> <span class="nav-text">5.x：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-x："><span class="nav-number">1.3.</span> <span class="nav-text">6.x：</span></a></li></ol></li></ol></div>
             
 
           </div>
