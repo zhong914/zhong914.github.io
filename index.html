@@ -271,6 +271,141 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://zhong914.github.io/2017/03/24/ss极简易配置/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Super7">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="http://tva2.sinaimg.cn/crop.0.0.1002.1002.1024/006wg2yfjw8f828q2pjvnj30ru0rutat.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Super7's Blog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Super7's Blog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/03/24/ss极简易配置/" itemprop="url">
+                  ss极简易配置
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-24T21:29:20+08:00">
+                2017-03-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ul>
+<li><p>首先新建AMI一切免费的选项</p>
+</li>
+<li><p>获取root权限<br>  sudo passwd root</p>
+</li>
+<li>切换root身份<br>  su root</li>
+<li>AMI自带pip,直接装shadowsocks<br>  pip install shadowsocks</li>
+<li>新建配置文件夹<br>  mkdir /etc/shadowsocks</li>
+<li>新建配置文件<br>  sudo vim /etc/shadowsocks/config.json</li>
+<li><p>编辑文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">&quot;server&quot;:&quot;0.0.0.0&quot;,</div><div class="line"></div><div class="line">&quot;server_port&quot;:8388,</div><div class="line"></div><div class="line">&quot;local_address&quot;:&quot;127.0.0.1&quot;,</div><div class="line"></div><div class="line">&quot;local_port&quot;:1080,</div><div class="line"></div><div class="line">&quot;password&quot;:&quot;yourkey&quot;,</div><div class="line"></div><div class="line">&quot;timeout&quot;:300,</div><div class="line"></div><div class="line">&quot;method&quot;:&quot;aes-256-cfb&quot;,</div><div class="line"></div><div class="line">&quot;fast_open&quot;:false,</div><div class="line"></div><div class="line">&quot;workers&quot;: 1</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>最简单的方式跑起来,因为我是免费帐号,需要在不同国家中切换,所以随用随开<br>  cd /etc/shadowsocks/<br>  ssserver</p>
+</li>
+<li>更新实例的入站规则,添加自定义tcp,端口为你刚刚开ss的如8388</li>
+<li>完,参考<a href="http://blog.csdn.net/gsying1474/article/details/25306129.https://my.oschina.net/lanni654321/blog/489459" target="_blank" rel="external">http://blog.csdn.net/gsying1474/article/details/25306129.https://my.oschina.net/lanni654321/blog/489459</a></li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
   <link itemprop="mainEntityOfPage" href="https://zhong914.github.io/2017/03/17/APP流畅度测试步骤/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1464,234 +1599,6 @@ cd .\uirecorder-mobile\
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="https://zhong914.github.io/2016/09/14/Markdown Guide/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="Super7">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="http://tva2.sinaimg.cn/crop.0.0.1002.1002.1024/006wg2yfjw8f828q2pjvnj30ru0rutat.jpg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Super7's Blog">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="Super7's Blog" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/09/14/Markdown Guide/" itemprop="url">
-                  Markdown Guide
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-09-14T14:32:32+08:00">
-                2016-09-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="Guide"><a href="#Guide" class="headerlink" title="Guide"></a>Guide</h1><p>这是一篇讲解如何正确使用 Ruby China 的 <strong>Markdown</strong> 的排版示例，学会这个很有必要，能让你的文章有更佳清晰的排版。</p>
-<blockquote>
-<p>引用文本：Markdown is a text formatting syntax inspired</p>
-</blockquote>
-<h2 id="语法指导"><a href="#语法指导" class="headerlink" title="语法指导"></a>语法指导</h2><h3 id="普通内容"><a href="#普通内容" class="headerlink" title="普通内容"></a>普通内容</h3><p>这段内容展示了在内容里面一些小的格式，比如：</p>
-<ul>
-<li><strong>加粗</strong> - <code>**加粗**</code></li>
-<li><em>倾斜</em> - <code>*倾斜*</code></li>
-<li><del>删除线</del> - <code>~~删除线~~</code></li>
-<li><code>Code 标记</code> - <code>Code 标记</code></li>
-<li><a href="http://github.com" target="_blank" rel="external">超级链接</a> - <code>[超级链接](http://github.com)</code></li>
-<li><a href="mailto:lihuazhang@hotmail.com" target="_blank" rel="external">lihuazhang@hotmail.com</a> - <code>[lihuazhang@hotmail.com](mailto:lihuazhang@hotmail.com)</code></li>
-</ul>
-<h3 id="提及用户"><a href="#提及用户" class="headerlink" title="提及用户"></a>提及用户</h3><p>@lihuazhang @monkey @seveniruby … 通过 @ 可以在发帖和回帖里面提及用户，信息提交以后，被提及的用户将会收到系统通知。以便让他来关注这个帖子或回帖。</p>
-<h3 id="表情符号-Emoji"><a href="#表情符号-Emoji" class="headerlink" title="表情符号 Emoji"></a>表情符号 Emoji</h3><p>TesterHome 支持表情符号，你可以用系统默认的 Emoji 符号（无法支持 Chrome 以及 Windows 用户）。<br>也可以用图片的表情，输入 <code>:</code> 将会出现智能提示。</p>
-<h4 id="一些表情例子"><a href="#一些表情例子" class="headerlink" title="一些表情例子"></a>一些表情例子</h4><p>:smile: :laughing: :dizzy_face: :sob: :cold_sweat: :sweat_smile:  :cry: :triumph: :heart_eyes: :relaxed: :sunglasses: :weary:</p>
-<p>:+1: :-1: :100: :clap: :bell: :gift: :question: :bomb: :heart: :coffee: :cyclone: :bow: :kiss: :pray: :sweat_drops: :hankey: :exclamation: :anger:</p>
-<p>更多表情请访问：<a href="http://www.emoji-cheat-sheet.com" target="_blank" rel="external">http://www.emoji-cheat-sheet.com</a></p>
-<h3 id="大标题-Heading-3"><a href="#大标题-Heading-3" class="headerlink" title="大标题 - Heading 3"></a>大标题 - Heading 3</h3><p>你可以选择使用 H2 至 H6，使用 ##(N) 打头，H1 不能使用，会自动转换成 H2。</p>
-<blockquote>
-<p>NOTE: 别忘了 # 后面需要有空格！</p>
-</blockquote>
-<h4 id="Heading-4"><a href="#Heading-4" class="headerlink" title="Heading 4"></a>Heading 4</h4><h5 id="Heading-5"><a href="#Heading-5" class="headerlink" title="Heading 5"></a>Heading 5</h5><h6 id="Heading-6"><a href="#Heading-6" class="headerlink" title="Heading 6"></a>Heading 6</h6><h3 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">![alt 文本](http://image-path.png)</div><div class="line">![alt 文本](http://image-path.png &quot;图片 Title 值&quot;)</div><div class="line">![设置图片宽度高度](http://image-path.png =300x200)</div><div class="line">![设置图片宽度](http://image-path.png =300x)</div><div class="line">![设置图片高度](http://image-path.png =x200)</div></pre></td></tr></table></figure>
-<h3 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h3><h4 id="普通"><a href="#普通" class="headerlink" title="普通"></a>普通</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">*emphasize*    **strong**</div><div class="line">_emphasize_    __strong__</div><div class="line">@a = 1</div></pre></td></tr></table></figure>
-<h4 id="语法高亮支持"><a href="#语法高亮支持" class="headerlink" title="语法高亮支持"></a>语法高亮支持</h4><p>如果在 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">##### 演示 Ruby 代码高亮</div><div class="line"></div><div class="line">```ruby</div><div class="line">class PostController &lt; ApplicationController</div><div class="line">  def index</div><div class="line">    @posts = Post.desc(&quot;id).limit(10)</div><div class="line">  end</div><div class="line">end</div></pre></td></tr></table></figure></p>
-<h5 id="演示-Rails-View-高亮"><a href="#演示-Rails-View-高亮" class="headerlink" title="演示 Rails View 高亮"></a>演示 Rails View 高亮</h5><figure class="highlight erb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;%= @posts.each do |post| %&gt;</div><div class="line">&lt;div class="post"&gt;&lt;/div&gt;</div><div class="line">&lt;% end %&gt;</div></pre></td></tr></table></figure>
-<h5 id="演示-YAML-文件"><a href="#演示-YAML-文件" class="headerlink" title="演示 YAML 文件"></a>演示 YAML 文件</h5><figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="attr">zh-CN:</span></div><div class="line"><span class="attr">  name:</span> 姓名</div><div class="line"><span class="attr">  age:</span> 年龄</div></pre></td></tr></table></figure>
-<blockquote>
-<p>Tip: 语言名称支持下面这些: <code>ruby</code>, <code>python</code>, <code>js</code>, <code>html</code>, <code>erb</code>, <code>css</code>, <code>coffee</code>, <code>bash</code>, <code>json</code>, <code>yml</code>, <code>xml</code> …</p>
-</blockquote>
-<h3 id="有序、无序列表"><a href="#有序、无序列表" class="headerlink" title="有序、无序列表"></a>有序、无序列表</h3><h4 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h4><ul>
-<li>Ruby<ul>
-<li>Rails<ul>
-<li>ActiveRecord</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Go<ul>
-<li>Gofmt</li>
-<li>Revel</li>
-</ul>
-</li>
-<li>Node.js<ul>
-<li>Koa</li>
-<li>Express</li>
-</ul>
-</li>
-</ul>
-<h4 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h4><ol>
-<li>Node.js<ol>
-<li>Express</li>
-<li>Koa</li>
-<li>Sails</li>
-</ol>
-</li>
-<li>Ruby<ol>
-<li>Rails</li>
-<li>Sinatra</li>
-</ol>
-</li>
-<li>Go</li>
-</ol>
-<h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><p>如果需要展示数据什么的，可以选择使用表格哦</p>
-<table>
-<thead>
-<tr>
-<th>header 1</th>
-<th>header 3</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>cell 1</td>
-<td>cell 2</td>
-</tr>
-<tr>
-<td>cell 3</td>
-<td>cell 4</td>
-</tr>
-<tr>
-<td>cell 5</td>
-<td>cell 6</td>
-</tr>
-</tbody>
-</table>
-<h3 id="段落"><a href="#段落" class="headerlink" title="段落"></a>段落</h3><p>留空白的换行，将会被自动转换成一个段落，会有一定的段落间距，便于阅读。</p>
-<p>请注意后面 Markdown 源代码的换行留空情况。</p>
-<table>
-<thead>
-<tr>
-<th>姓名</th>
-<th>性别</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>vbyh</td>
-<td>male</td>
-</tr>
-<tr>
-<td>-</td>
-<td></td>
-</tr>
-<tr>
-<td>-</td>
-<td>-</td>
-</tr>
-</tbody>
-</table>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1739,7 +1646,7 @@ cd .\uirecorder-mobile\
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1750,7 +1657,7 @@ cd .\uirecorder-mobile\
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
